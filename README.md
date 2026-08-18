@@ -195,7 +195,7 @@ L3 MIAGE — Université Toulouse 1 Capitole
 Data Science & Analytics Freelance
 
 [![GitHub](https://img.shields.io/badge/GitHub-Kaabi--ml-181717?logo=github)](https://github.com/Kaabi-ml)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?logo=linkedin)](www.linkedin.com/in/amin-kaabi-74308a278)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?logo=linkedin)](https://linkedin.com//in/amin-kaabi-74308a278)
 
 ---
 
