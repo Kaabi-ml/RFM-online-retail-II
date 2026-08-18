@@ -2,8 +2,8 @@ import pandas as pd
 
 
 
-# ── CONFIGURATION CLIENT ── à modifier à chaque nouveau client ──
-fichier        = "/Users/aminkaabi/Downloads/online_retail_II.csv"
+# ── CONFIGURATION CLIENT ── 
+fichier        = "online_retail_II.csv"
 col_client     = "Customer ID"    # ← nom réel de la colonne client
 col_date       = "InvoiceDate"    # ← nom réel de la colonne date
 col_quantite   = "Quantity"       # ← nom réel de la colonne quantité
@@ -41,6 +41,6 @@ df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
 df["Customer ID"] = df["Customer ID"].astype(int)
 
 # Création du fichier
-df.to_csv("/Users/aminkaabi/Downloads/filtered_retail.csv", index=False)
+df.to_csv("filtered_retail.csv", index=False)
 
 print(df.head())
