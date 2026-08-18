@@ -4,15 +4,15 @@ import datetime
 import matplotlib.pyplot as plt
 
 
-# ── CONFIGURATION CLIENT ── à modifier à chaque nouveau client ──
-fichier        = "/Users/aminkaabi/Downloads/filtered_retail.csv"
-col_client     = "Customer ID"    # ← nom réel de la colonne client
-col_date       = "InvoiceDate"    # ← nom réel de la colonne date
-col_quantite   = "Quantity"       # ← nom réel de la colonne quantité
-col_prix       = "Price"          # ← nom réel de la colonne prix
-col_facture    = "Invoice"        # ← nom réel de la colonne commande
-encoding       = "latin-1"        # ← "utf-8" ou "latin-1" selon le fichier
-separateur     = ","              # ← "," ou ";" selon le CSV
+# ── CONFIGURATION CLIENT ── 
+fichier        = "filtered_retail.csv"
+col_client     = "Customer ID"    
+col_date       = "InvoiceDate"    
+col_quantite   = "Quantity"       
+col_prix       = "Price"          
+col_facture    = "Invoice"       
+encoding       = "latin-1"       
+separateur     = ","            
 # ─────────────────────────────────────────────────────────────────
 
 df = pd.read_csv(fichier, encoding=encoding, sep=separateur)
@@ -68,7 +68,7 @@ def segment(row):
 
 rfm["Segment"] = rfm.apply(segment, axis=1)
 
-# 1. CA par segment — la question que tout e-commerçant pose en premier
+# 1. CA par segment : la question que tout e-commerçant pose en premier
 ca_segment = rfm.groupby("Segment").agg(
     Nb_clients = ("Customer ID", "count"),
     CA_total   = ("Montant", "sum"),
@@ -97,7 +97,7 @@ plt.tight_layout()
 plt.savefig("rfm_analyse.png", dpi=150)
 plt.show()
 
-# Graphique 3 : le paradoxe Champions — bulles RFM
+# Graphique 3 : le paradoxe Champions : bulles RFM
 
 fig, ax = plt.subplots(figsize=(12, 7))
 
@@ -129,4 +129,4 @@ plt.savefig("rfm_bulles.png", dpi=150)
 plt.show()
 print(ca_segment.sort_values("CA_total", ascending=False))
 
-ca_segment.to_csv("/Users/aminkaabi/Downloads/rfm_segment.csv", index=False)
+ca_segment.to_csv("rfm_segment.csv", index=False)
